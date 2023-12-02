@@ -28,7 +28,7 @@ RUN mkdir -p target/dependency
 WORKDIR /workdir/server/target/dependency
 RUN jar -xf ../*.jar
 
-FROM openjdk:20
+FROM openjdk:18
 
 EXPOSE 8080
 VOLUME /tmp
