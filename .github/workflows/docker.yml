@@ -20,8 +20,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Build docker image
-      run: docker build -t gabardomateus/web-crawler-scheduler .
+    # - name: Build docker image
+    #   run: docker build -t gabardomateus/web-crawler-scheduler .
+    - name: Build and export
+      uses: docker/build-push-action@v5
+      with:
+        context: .
+        tags: web-crawler-scheduler:latest
+        outputs: type=docker,dest=/tmp/web-crawler-scheduler.tar
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
