@@ -32,9 +32,9 @@ jobs:
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build docker image
-      run: docker build -t web-crawler-scheduler .
+      run: docker build -t gabardomateus/web-crawler-scheduler .
     - name: Push docker image
-      run:  docker push web-crawler-scheduler
+      run:  docker push gabardomateus/web-crawler-scheduler
 
     # # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     # - name: Update dependency graph
