@@ -33,7 +33,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
-        name: web-crawler-scheduler
+        name: gabardomateus/web-crawler-scheduler
         path: /tmp/web-crawler-scheduler.tar
   deploy:
     needs: build
@@ -42,7 +42,7 @@ jobs:
     - name: Download artifact
       uses: actions/download-artifact@v3
       with:
-        name: web-crawler-scheduler
+        name: gabardomateus/web-crawler-scheduler
         path: /tmp
     - name: Load image
       run: |
@@ -51,4 +51,4 @@ jobs:
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push docker image
-      run:  docker push web-crawler-scheduler    
+      run:  docker push gabardomateus/web-crawler-scheduler    
