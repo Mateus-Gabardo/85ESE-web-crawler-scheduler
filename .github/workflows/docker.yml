@@ -35,7 +35,7 @@ jobs:
       uses: actions/download-artifact@v3
       with:
         name: docker-image
-        path: .
+        path: web-crawler-scheduler-latest.tar
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Push docker image
