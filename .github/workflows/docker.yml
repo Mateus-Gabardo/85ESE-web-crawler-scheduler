@@ -51,6 +51,8 @@ jobs:
         docker tag web-crawler-scheduler gabardomateus/web-crawler-scheduler
     - name: Run image
       run: docker run -d -p 8080:80 gabardomateus/web-crawler-scheduler
+    - name: Run tests
+      run: mvn test
   deploy:
     needs: test
     runs-on: ubuntu-latest
