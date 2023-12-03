@@ -30,7 +30,7 @@ RUN jar -xf ../*.jar
 
 FROM openjdk:18
 
-EXPOSE 8080
+EXPOSE 8081
 VOLUME /tmp
 ARG DEPENDENCY=/workdir/server/target/dependency
 COPY --from=prepare-production ${DEPENDENCY}/BOOT-INF/lib /app/lib
