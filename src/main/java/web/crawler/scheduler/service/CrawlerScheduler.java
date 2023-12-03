@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @Component
 public class CrawlerScheduler {
     private final String cron = "0 */2 * * * *";
-    private final String urlCrawler = "http://localhost:8080/catholicLyrics/startCrawlAll";
+    private final String urlCrawler = "http://web-crawler-api:8080/catholicLyrics/startCrawlAll";
 
 
     @Scheduled(cron = cron)
